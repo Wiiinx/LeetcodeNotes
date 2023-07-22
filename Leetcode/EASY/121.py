@@ -11,10 +11,29 @@ def maxProfit(prices):
         right += 1
     return max_profit
 
+
+def fib(num):
+    if num < 2:
+        return num
+    dp = [0, 1]
+    for i in range(2, num+1):
+        dp.append(dp[i - 1] + dp[i - 2])
+
+    return dp[-1]
+
+def fib2(n):
+    if n == 0 or n == 1:
+        return n
+    dp = [0, 1]
+    for i in range(2, n + 1):
+        dp.append(dp[i - 1] + dp[i - 2])
+    return dp[n]
+
 def main():
     lst1 = [7,1,5,3,6,4]
     lst2 = [7,6,4,3,1]
-    print(maxProfit(lst1))
-    print(maxProfit(lst2))
+    #print(maxProfit(lst1))
+    #print(maxProfit(lst2))
+    print(fib(15))
 
 main()
