@@ -1,16 +1,8 @@
 def missingNumber(nums):
-    n = len(nums)
-    nums.sort()
-    i = 1
-    if nums[0] != 0:
-        return 0
-    while i < n:
-        if i < len(nums):
-            if nums[i - 1] + 1 != nums[i]:
-                return nums[i - 1] + 1
-        i += 1
-    return nums[len(nums)-1] + 1
-
+    res = 0
+    for i in range(len(nums)):
+        res += (i - nums[i])
+    return res
 
 
 
